@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+            body{
+                background-color:black;
+                color: white;
+                font-family: helvetica;
+            }
+            h3{
+                position: relative;top: -150px;left: 5px;
+            }
+            .exit{
+                position:relative;
+                top:160px;
+                left:-215px;
+            }
+            h3{
+                position:relative;
+                top: 0;
+                left:0;
+            }
+            #seconds {
+                font-size: 5em;
+                
+            }
+            #minutes {
+                font-size: 5em;
+            }
+            #colon {
+                font-size: 5em;
+            }
+        </style>
+            <h1>The New MTA</h1>
+            <hr width="100%" color="white" size="5px" />
+            <h2>Grand Street<br>
+                The Link Will Be Secured Shortly<Br>
+                Please Be Patient</h2>
+            <img src="box.gif"><br>
+            
+            
+            <label id="minutes">00</label>
+            <label id="colon">:</label>
+            <label id="seconds">00</label>
+            <script type="text/javascript">
+                var minutesLabel = document.getElementById("minutes");
+                var secondsLabel = document.getElementById("seconds");
+                var totalSeconds = 0;
+                setInterval(setTime, 1000);
+                function setTime()
+                {
+                    ++totalSeconds;
+                    secondsLabel.innerHTML = pad(totalSeconds%60);
+                    minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+                }
+                function pad(val)
+                {
+                    var valString = val + "";
+                    if(valString.length < 2)
+                    {
+                        return "0" + valString;
+                    }
+                        else
+                    {
+                        return valString;
+                    }
+                }
+            </script>
+
+            
+            <a class="exit" href="Index.html">
+                <svg>
+                <rect width="600" height="50" style="fill:rgb(221, 27, 27);" />
+                </svg> 
+            </a>
+    <H3>EMERGENCY EXIT</H3><br>   
+</html>
